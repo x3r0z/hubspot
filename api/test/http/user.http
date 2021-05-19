@@ -1,0 +1,5 @@
+### Get user profile
+GET {{SCHEMA}}{{HOST}}{{API_VERSION}}/user/profile
+Accept: application/json
+Cache-Control: no-cache
+Authorization: bearer {{USER_ACCESS_TOKEN}}

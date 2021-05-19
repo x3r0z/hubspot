@@ -1,0 +1,100 @@
+### Create new invoice
+POST {{SCHEMA}}{{HOST}}{{API_VERSION}}/invoice
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+Authorization: bearer {{USER_ACCESS_TOKEN}}
+
+{
+  "companyName": "Company Name",
+  "fullName": "Pedro Perez",
+  "companyWebsite": "http://demo.com",
+  "companyAddress": "Company Address",
+  "companyCSZ": "Company City, State, Zip",
+  "companyCountry": "Company Country",
+  "companyPhone": "23423423",
+  "companyEmail": "company@email.com",
+  "clientCompany": "Client Company",
+  "clientName": "Client Name",
+  "clientAddress": "Client Address",
+  "clientCSZ": "Client City, State, Zip",
+  "clientCountry": "Client Country",
+  "invoiceNo": "INV 001",
+  "invoiceDate": "2021-05-18",
+  "invoiceDueDate": "2021-05-30",
+  "invoiceNotes": "Notes",
+  "invoiceSubtotal": 100,
+  "invoiceTax": 0,
+  "invoiceDiscount": 0,
+  "invoiceTotal": 100,
+  "items": [
+    {
+      "item": 1,
+      "description": "Item 1",
+      "quantity": 2,
+      "price": 50
+    }]
+}
+
+### Get all from user
+GET {{SCHEMA}}{{HOST}}{{API_VERSION}}/invoice
+Accept: application/json
+Cache-Control: no-cache
+Authorization: bearer {{USER_ACCESS_TOKEN}}
+
+### Get one invoice
+GET {{SCHEMA}}{{HOST}}{{API_VERSION}}/invoice/60a4afa734c9a362d9369095
+Accept: application/json
+Cache-Control: no-cache
+Authorization: bearer {{USER_ACCESS_TOKEN}}
+
+### Update invoice
+PUT {{SCHEMA}}{{HOST}}{{API_VERSION}}/invoice/60a4afa734c9a362d9369095
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+Authorization: bearer {{USER_ACCESS_TOKEN}}
+
+{
+  "companyName": "Company Name Update",
+  "fullName": "Pedro Perez",
+  "companyWebsite": "http://demo.update.com",
+  "companyAddress": "Company Address",
+  "companyCSZ": "Company City, State, Zip",
+  "companyCountry": "Company Country",
+  "companyPhone": "23423423",
+  "companyEmail": "company@email.com",
+  "clientCompany": "Client Company",
+  "clientName": "Client Name",
+  "clientAddress": "Client Address",
+  "clientCSZ": "Client City, State, Zip",
+  "clientCountry": "Client Country",
+  "invoiceNo": "INV 001",
+  "invoiceDate": "2021-05-20",
+  "invoiceDueDate": "2021-05-30",
+  "invoiceNotes": "Notes",
+  "invoiceSubtotal": 100,
+  "invoiceTax": 0,
+  "invoiceDiscount": 0,
+  "invoiceTotal": 100,
+  "items": [
+    {
+      "item": 1,
+      "description": "Item 1",
+      "quantity": 2,
+      "price": 50
+    },
+    {
+      "item": 2,
+      "description": "Item 2",
+      "quantity": 1,
+      "price": 80
+    }
+  ]
+}
+
+### Delete one invoice
+DELETE {{SCHEMA}}{{HOST}}{{API_VERSION}}/invoice/60a4afa734c9a362d9369095
+Accept: application/json
+Cache-Control: no-cache
+Authorization: bearer {{USER_ACCESS_TOKEN}}

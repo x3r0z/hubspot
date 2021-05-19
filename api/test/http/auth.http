@@ -1,0 +1,31 @@
+### Register a new User
+POST {{SCHEMA}}{{HOST}}{{API_VERSION}}/auth/register
+Content-Type: application/json
+Accept: application/json
+Cache-Control: no-cache
+
+{
+  "name": "Pedro",
+  "email": "{{USER_EMAIL}}",
+  "password": "{{USER_PASSWORD}}"
+}
+
+### Authenticated a User
+// @no-log
+POST {{SCHEMA}}{{HOST}}{{API_VERSION}}/auth/login
+Content-Type: application/json
+Accept: application/json
+Cache-Control: no-cache
+
+{ "username": "{{USER_EMAIL}}", "password": "{{USER_PASSWORD}}" }
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 201, "Response status is not 201");
+});
+
+client.test("Check access token exists", function() {
+  client.assert(response.body.hasOwnProperty("accessToken"), "Cannot find 'accessToken' option in response");
+  client.global.set("USER_ACCESS_TOKEN", response.body.accessToken);
+});
+%}
