@@ -1,0 +1,51 @@
+\:host
+  display: flex
+  flex: 1 1 auto
+  width: 100%
+  justify-content: center
+  flex-direction: column
+
+  .input-container
+    display: flex
+    flex: 1 1 auto
+    flex-direction: column
+    margin-bottom: 16px
+
+    label
+      cursor: pointer
+      font-weight: 500
+      font-size: 14px
+      color: #33475b
+      line-height: 24px
+      padding: 8px 12px 4px 0
+      font-family: Avenir Next W02,Helvetica,Arial,sans-serif
+    input
+      margin-top: 4px
+      padding: 9px 10px
+      border-radius: 3px
+      border: 1px solid #cbd6e2
+      font-size: 16px
+      transition: all .15s ease-out
+      background-color: #f5f8fa
+      color: #33475b
+      line-height: 22px
+      text-align: left
+      vertical-align: middle
+
+      &:focus
+        border-color: rgba(0,208,228,.5)
+        box-shadow: 0 0 4px 1px rgb(0 208 228 / 30%), 0 0 0 1px #00d0e4
+        outline: 0
+
+      &.ng-invalid.ng-touched
+        border-color: #f2545b!important
+        box-shadow: 0 0 0 1px #f2545b!important
+
+    .check-container
+      cursor: pointer
+      display: block
+      max-width: 100%
+
+  .mat-warn
+    font-size: 18px
+

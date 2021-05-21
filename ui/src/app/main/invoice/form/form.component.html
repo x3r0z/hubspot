@@ -1,0 +1,175 @@
+<div class="container">
+  <div class="form-container">
+    <div fxFlex="100" fxLayout="column">
+      <div class="m-bottom-8" fxFlex="100" fxLayout="row" fxLayoutAlign="space-between">
+        <h2>Invoice</h2>
+        <button mat-button color="primary" (click)="cancel()">
+          <mat-icon class="mat-icon">arrow_left</mat-icon> Back
+        </button>
+      </div>
+      <div *ngIf="globalError != null" fxFlexAlign="center">
+        <span class="error-msg">{{globalError}}</span>
+      </div>
+      <form fxLayout="column" *ngIf="invoiceForm" fxFlex [formGroup]="invoiceForm">
+        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between">
+          <div fxFlex="45">
+            <div class="input-container">
+              <input type="text" formControlName="companyName" required tabIndex="1" placeholder="Company Name *" class="input-big">
+              <ng-container *ngIf="invoiceForm.controls.companyName.invalid && (invoiceForm.controls.companyName.dirty || invoiceForm.controls.companyName.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.companyName.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="fullName" required tabIndex="1" placeholder="Full Name *">
+              <ng-container *ngIf="invoiceForm.controls.fullName.invalid && (invoiceForm.controls.fullName.dirty || invoiceForm.controls.fullName.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.fullName.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="companyWebsite" required tabIndex="1" placeholder="Company Website *">
+              <ng-container *ngIf="invoiceForm.controls.companyWebsite.invalid && (invoiceForm.controls.companyWebsite.dirty || invoiceForm.controls.companyWebsite.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.companyWebsite.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="companyAddress" tabIndex="1" placeholder="Company Address">
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="companyCSZ" tabIndex="1" placeholder="City, State, Zip Code">
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="companyCountry" tabIndex="1" placeholder="Country">
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="companyPhone" required tabIndex="1" placeholder="Company Phone *">
+              <ng-container *ngIf="invoiceForm.controls.companyPhone.invalid && (invoiceForm.controls.companyPhone.dirty || invoiceForm.controls.companyPhone.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.companyPhone.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="companyEmail" required tabIndex="1" placeholder="Company Email *">
+              <ng-container *ngIf="invoiceForm.controls.companyEmail.invalid && (invoiceForm.controls.companyEmail.dirty || invoiceForm.controls.companyEmail.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.companyEmail.errors?.required">This field is required. </span>
+                <span class="error-msg" *ngIf="invoiceForm.controls.companyEmail.errors?.email">This field must be an email. </span>
+              </ng-container>
+            </div>
+          </div>
+
+          <div fxFlex="45">
+            <div class="input-container">
+              <input type="text" formControlName="clientCompany" required tabIndex="1" placeholder="Client Company Name *" class="input-big">
+              <ng-container *ngIf="invoiceForm.controls.clientCompany.invalid && (invoiceForm.controls.clientCompany.dirty || invoiceForm.controls.clientCompany.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.clientCompany.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="clientName" required tabIndex="1" placeholder="Client Full Name *">
+              <ng-container *ngIf="invoiceForm.controls.clientName.invalid && (invoiceForm.controls.clientName.dirty || invoiceForm.controls.clientName.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.clientName.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="clientAddress" tabIndex="1" placeholder="Client Address">
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="clientCSZ" tabIndex="1" placeholder="Client City, State, Zip Code">
+            </div>
+            <div class="input-container">
+              <input type="text" formControlName="clientCountry" tabIndex="1" placeholder="Client Country">
+            </div>
+
+            <div class="input-container m-top-8">
+              <input type="text" formControlName="invoiceNo" required tabIndex="1" placeholder="Invoice No *" class="input-big">
+              <ng-container *ngIf="invoiceForm.controls.invoiceNo.invalid && (invoiceForm.controls.invoiceNo.dirty || invoiceForm.controls.invoiceNo.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.invoiceNo.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container" fxLayout="row">
+              <label fxFlex="30">Invoice Date</label>
+              <input fxFlex="70" type="date" formControlName="invoiceDate" required tabIndex="1" placeholder="Invoice Date">
+              <ng-container *ngIf="invoiceForm.controls.invoiceDate.invalid && (invoiceForm.controls.invoiceDate.dirty || invoiceForm.controls.invoiceDate.touched)">
+                <span class="error-msg" *ngIf="invoiceForm.controls.invoiceDate.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+            <div class="input-container" fxLayout="row">
+              <label fxFlex="30">Invoice Due Date</label>
+              <input fxFlex="70" type="date" formControlName="invoiceDueDate" tabIndex="1" placeholder="Invoice Due Date">
+            </div>
+          </div>
+        </div>
+
+        <div class="table-container m-top-6" fxLayout="column">
+          <table fxFlex="100">
+            <thead>
+            <tr>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+              <ng-container formArrayName="items">
+                <ng-container *ngFor="let itemForm of items.controls; let i = index">
+                  <tr [formGroupName]="i">
+                    <td>
+                      <input type="text" formControlName="item">
+                    </td>
+                    <td>
+                      <input type="text" formControlName="description">
+                    </td>
+                    <td>
+                      <input type="text" formControlName="quantity">
+                    </td>
+                    <td>
+                      <input type="text" formControlName="price">
+                    </td>
+                    <td>
+                      <button mat-button color="primary" (click)="removeItem(i)">
+                        <mat-icon class="mat-icon">delete_forever</mat-icon>
+                      </button>
+                    </td>
+                  </tr>
+                </ng-container>
+              </ng-container>
+            </tbody>
+          </table>
+          <button mat-button color="warn" class="add-button" (click)="newItem()"> Add More </button>
+        </div>
+
+        <div class="m-top-8" fxLayout="row" fxLayoutAlign="space-between">
+          <div fxFlex="45" class="note-container">
+            <span>Notes:</span>
+            <textarea placeholder="Any additional comments" formControlName="invoiceNotes"></textarea>
+          </div>
+          <div fxFlex="45" fxLayout="column" class="amount-container">
+            <div class="input-container" fxLayout="row">
+              <label fxFlex="30">Sub Total</label>
+              <input fxFlex="70" type="number" formControlName="invoiceSubtotal" tabIndex="1">
+            </div>
+            <div class="input-container" fxLayout="row">
+              <label fxFlex="30">Tax (%)</label>
+              <input fxFlex="70" type="number" formControlName="invoiceTax" tabIndex="1">
+            </div>
+            <div class="input-container" fxLayout="row">
+              <label fxFlex="30">Discount (%)</label>
+              <input fxFlex="70" type="number" formControlName="invoiceDiscount" tabIndex="1">
+            </div>
+            <div class="separator"></div>
+            <div class="input-container" fxLayout="row">
+              <label fxFlex="30">Total</label>
+              <input fxFlex="70" type="number" formControlName="invoiceTotal" tabIndex="1">
+            </div>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="end" class="m-top-8">
+          <button mat-button color="warn" (click)="save()" [disabled]="invoiceForm.invalid">
+            <mat-icon class="mat-icon">save_alt</mat-icon> Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

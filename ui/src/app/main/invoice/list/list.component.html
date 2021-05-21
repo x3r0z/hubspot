@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="table-container">
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="invoice">
+        <mat-header-cell *matHeaderCellDef> Invoice </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.invoiceNo }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="customer">
+        <mat-header-cell *matHeaderCellDef> Client </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.clientName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.invoiceDate | date }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="dueDate">
+        <mat-header-cell *matHeaderCellDef> Due Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.invoiceDueDate | date }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-button color="primary" class="m-right-4" (click)="editInvoice(row._id)">Edit</button>
+          <button mat-button color="warn" (click)="deleteInvoice(row._id)">Delete</button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <button mat-button color="warn" class="add-button" (click)="newInvoice()"> Add More </button>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

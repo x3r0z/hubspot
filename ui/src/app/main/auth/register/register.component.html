@@ -1,0 +1,96 @@
+<div fxFlex="100" fxLayout="column" class="m-top-8" fxLayoutAlign="space-between">
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div class="logo-container">
+      <img src="./assets/img/hubspot-wordmark.svg" alt="Logo">
+    </div>
+    <div class="login-container">
+      <p>Have an account? <a routerLink="/login">Sign in</a></p>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-around" class="info-container">
+    <div fxFlex="30" fxLayout="column">
+      <h1 class="text-center">Create your free account</h1>
+      <div class="m-top-6 m-bottom-8">
+        <div class="google-login-wrapper">
+          <a class="google-sign-in" target="_self">
+            <span class="icon"></span>
+            <span class="buttonText">Sign in with Google</span>
+          </a>
+        </div>
+      </div>
+      <div class="Separator__Container-sc-17zgj3l-0 eLRYda">
+        <span>Or</span>
+      </div>
+      <div *ngIf="globalError != null" fxFlexAlign="center">
+        <span class="error-msg">{{globalError}}</span>
+      </div>
+      <form *ngIf="registerForm" fxFlex [formGroup]="registerForm" fxLayout="column">
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <div fxFlex="45">
+            <div class="input-container">
+              <input type="text" formControlName="firstName" required tabIndex="1" placeholder="First Name">
+              <ng-container *ngIf="registerForm.controls.firstName.invalid && (registerForm.controls.firstName.dirty || registerForm.controls.firstName.touched)">
+                <span class="error-msg" *ngIf="registerForm.controls.firstName.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+          </div>
+          <div fxFlex="45">
+            <div class="input-container">
+              <input type="text" formControlName="lastName" required tabIndex="2" placeholder="Last Name">
+              <ng-container *ngIf="registerForm.controls.lastName.invalid && (registerForm.controls.lastName.dirty || registerForm.controls.lastName.touched)">
+                <span class="error-msg" *ngIf="registerForm.controls.lastName.errors?.required">This field is required. </span>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="email" formControlName="email" required tabIndex="3" placeholder="Email address">
+          <ng-container *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)">
+            <span class="error-msg" *ngIf="registerForm.controls.email.errors?.required">This field is required. </span>
+            <span class="error-msg" *ngIf="registerForm.controls.email.errors?.email">Please enter a valid email address. </span>
+          </ng-container>
+        </div>
+        <div class="input-container">
+          <input type="password" formControlName="password" required tabIndex="4" placeholder="Password">
+          <ng-container *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)">
+            <span class="error-msg" *ngIf="registerForm.controls.password.errors?.required">This field is required. </span>
+          </ng-container>
+        </div>
+        <button class="m-bottom-4 m-top-8" mat-raised-button color="warn" [disabled]="registerForm.invalid" (click)="register()">Register</button>
+      </form>
+      <div class="m-top-6 text-center">
+        <small class="private-microcopy is--text--help">
+          <span data-locale-at-render="en" data-key="legal.gdpr">
+            <span>By continuing, you're agreeing to the </span>
+            <a class="private-link uiLinkWithoutUnderline uiLinkDark" role="button" tabindex="0">
+              HubSpot Customer Terms of Service
+            </a>
+            <span> and </span>
+            <a class="private-link uiLinkWithoutUnderline uiLinkDark" role="button" tabindex="0">
+              Privacy Policy
+            </a>
+          </span>
+        </small>
+      </div>
+    </div>
+    <div fxFlex="20">
+      <div class="BaseMessageCaption__Children">
+        <div>
+          <div height="370" width="350" class="Blobstyles__BlobWrapper-vfkw53-0 bvWFlG">
+            <div class="Blobstyles__BackgroundBlob-vfkw53-1 klUnXr" height="370" width="350"></div>
+            <img height="460" src="//static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@3x.png" srcset="//static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@1x.png 400w, //static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@2x.png 800w, //static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@3x.png 1200w" sizes="(max-width: 1200px) 100vw, 1200px" class="Blobstyles__BlobImage-vfkw53-4 Blobstyles__BlobBleadImage-vfkw53-6 fxbQlZ">
+            <div class="Blobstyles__BlobMask-vfkw53-2 DybKw" height="320" width="320">
+            <div height="320" width="320" class="Blobstyles__BlogGradientBackground-vfkw53-3 fHfHzV"></div>
+            <img height="460" src="//static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@3x.png" srcset="//static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@1x.png 400w, //static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@2x.png 800w, //static.hsappstatic.net/signup-ui-lego/static-1.1409/images/landing-page-headshot/landing-page-headshot@3x.png 1200w" sizes="(max-width: 1200px) 100vw, 1200px" class="Blobstyles__BlobImage-vfkw53-4 kuthBy"></div>
+          </div>
+        </div>
+      </div>
+      <div class="BaseMessageCaption__Caption">
+        <h4 aria-level="2" class="Heading-qirhp6-0 H4-a5auda-0 cIrFNW">
+          HubSpot CRM is 100% free, forever.
+        </h4>
+        <p>No credit card needed</p>
+      </div>
+    </div>
+  </div>
+</div>

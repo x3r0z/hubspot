@@ -1,0 +1,45 @@
+<div class="signup-link" fxFlexAlign="center">
+  <p>Don't have an account? <a routerLink="/register">Sign Up</a></p>
+</div>
+<div *ngIf="globalError != null" fxFlexAlign="center">
+  <span class="error-msg">{{globalError}}</span>
+</div>
+<form *ngIf="loginForm" fxFlex [formGroup]="loginForm" fxLayout="column">
+  <div class="input-container">
+    <label>Email address</label>
+    <input type="email" formControlName="username" required tabIndex="1">
+    <ng-container *ngIf="loginForm.controls.username.invalid && (loginForm.controls.username.dirty || loginForm.controls.username.touched)">
+      <span class="error-msg" *ngIf="loginForm.controls.username.errors?.required">This field is required. </span>
+      <span class="error-msg" *ngIf="loginForm.controls.username.errors?.email">Please enter a valid email address. </span>
+    </ng-container>
+  </div>
+
+  <div class="input-container">
+    <label>Password</label>
+    <a (click)="togglePassword()" class="small">
+      <span *ngIf="showPassword">Hide Password</span>
+      <span *ngIf="!showPassword">Show Password</span>
+    </a>
+    <input [type]="passwordType" formControlName="password" required tabIndex="1">
+    <ng-container *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
+      <span class="error-msg" *ngIf="loginForm.controls.username.errors?.required">This field is required. </span>
+    </ng-container>
+  </div>
+
+  <a href="#" class="small">Forgot my password</a>
+
+  <div class="input-container">
+    <mat-checkbox class="example-margin" formControlName="remember">Remember me</mat-checkbox>
+  </div>
+
+  <button class="m-bottom-4" mat-raised-button color="warn" [disabled]="loginForm.invalid" (click)="login()">Log in</button>
+
+  <hr/>
+  <div class="google-login-wrapper">
+    <a class="google-sign-in" target="_self">
+      <span class="icon"></span>
+      <span class="buttonText">Sign in with Google</span>
+    </a>
+  </div>
+  <button class="m-bottom-4 m-top-4" mat-raised-button color="primary">Log in with SSO</button>
+</form>

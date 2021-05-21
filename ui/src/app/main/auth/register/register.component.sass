@@ -1,0 +1,175 @@
+.logo-container
+  padding-left: 20px
+  img
+    height: 37px
+
+.login-container
+  padding-right: 20px
+
+.info-container
+  margin-top: 80px
+
+  .eLRYda
+    display: flex
+    width: 100%
+    -webkit-box-pack: center
+    justify-content: center
+    -webkit-box-align: center
+    align-items: center
+    text-align: center
+    color: rgb(153, 172, 194)
+
+    &::before, &::after
+      content: ""
+      border-top: 1px solid rgb(203, 214, 226)
+      margin: 0 15px 0 0
+      flex: 1 0 20px
+
+    &::after
+      margin: 0 0 0 15px
+
+  .input-container
+    display: flex
+    flex-direction: column
+    width: 100%
+    margin-top: 16px
+    border-color: white !important
+    background-color: white !important
+
+    input
+      border-bottom-width: 2px
+      border-bottom-style: solid
+      border-image: initial
+      padding-bottom: 4px
+      border-bottom-color: rgb(0, 164, 189) !important
+      border-left: none !important
+      border-right: none !important
+      border-top: none !important
+      color: #33475b
+      display: block
+      height: 40px
+      line-height: 22px
+      -webkit-appearance: none
+
+      &:focus
+        border-bottom-color: rgba(0,208,228,.5)
+        border-left-width: 0
+        border-left-color: white
+        box-shadow: 0 0 4px 1px rgb(0 208 228 / 30%), 0 0 0 1px #00d0e4
+        outline: 0
+
+      &.ng-invalid.ng-touched
+        border-color: #f2545b!important
+        box-shadow: 0 0 0 1px #f2545b!important
+
+.BaseMessageCaption__Children
+  .bvWFlG
+    position: relative
+    opacity: 1
+    width: 350px
+    height: 370px
+    display: flex
+    -webkit-box-align: center
+    align-items: center
+    -webkit-box-pack: center
+    justify-content: center
+
+    .klUnXr
+      position: absolute
+      opacity: 1
+      width: 350px
+      height: 370px
+      display: flex
+      -webkit-box-align: center
+      align-items: center
+      -webkit-box-pack: center
+      justify-content: center
+      background: rgb(255, 243, 238)
+      border-radius: 42% 58% 31% 69% / 46% 32% 68% 54%
+      pointer-events: none
+      will-change: transform, border-radius
+      animation: 60s ease-in-out 0s infinite alternate both running iPyRsL, 60s ease-in-out 0s infinite normal both running jespJt
+
+    .fxbQlZ
+      position: absolute
+      max-height: 460px
+      width: auto
+      height: auto
+      clip: rect(0px, 400px, 230px, 0px)
+      z-index: 1
+      transition: transform 2s cubic-bezier(0.04, 0.78, 0.43, 0.99) 100ms, 100ms
+
+    .DybKw
+      position: relative
+      width: 320px
+      height: 320px
+      pointer-events: none
+      will-change: transform, border-radius
+      display: flex
+      -webkit-box-align: center
+      align-items: center
+      -webkit-box-pack: center
+      justify-content: center
+      transform: translateZ(0px)
+      overflow: hidden
+      border-radius: 49% 51% 31% 69% / 39% 65% 35% 61%
+      animation: 60s ease-in-out 10s infinite alternate both running iPyRsL, 60s ease-in-out 10s infinite normal both running jespJt
+      transition: border-radius 4s cubic-bezier(0.04, 0.78, 0.43, 0.99) 0.4s, transform 1s
+
+    .fHfHzV
+      box-shadow: rgb(0 0 0 / 0%) 0 0 0 1px
+      position: absolute
+      left: 50%
+      top: 50%
+      width: 480px
+      height: 480px
+      transform: translate(-50%, -50%)
+      background: rgb(255, 143, 89)
+
+    .kuthBy
+      position: absolute
+      max-height: 460px
+      width: auto
+      height: auto
+      clip: rect(229px, 400px, 400px, 0px)
+      transition: transform 2s cubic-bezier(0.04, 0.78, 0.43, 0.99) 100ms, 100ms
+
+
+.BaseMessageCaption__Caption
+  order: 2
+  margin-top: 3rem
+  margin-bottom: 0
+  text-align: center
+
+  h4
+    font-weight: 600
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    margin-bottom: 16px
+    margin-top: 0
+    display: block
+    line-height: normal
+    text-transform: none
+
+@keyframes iPyRsL
+  0%, 100%
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%
+  14%
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%
+  28%
+    border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%
+  42%
+    border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%
+  56%
+    border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%
+  70%
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%
+  84%
+    border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%
+
+@keyframes jespJt
+  0%, 100%
+    transform: none
+  50%
+    transform: rotateY(10deg)
+

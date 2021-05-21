@@ -1,0 +1,197 @@
+/* You can add global styles to this file, and also import other style files */
+body
+  margin: 0
+  font-family: Avenir Next W02,Helvetica,Arial,sans-serif
+  width: 100%
+  height: 100%
+  font-weight: 400
+  font-size: 14px
+  color: #33475b
+  line-height: 24px
+
+a
+  font-weight: 600
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  transition: all .15s ease-out
+  color: #0091ae
+  text-decoration: none
+  cursor: pointer
+
+  &:hover
+    color: #007a8c
+    text-decoration: underline
+
+.small
+  font-size: 12px
+  line-height: 18px
+
+.cdk-visually-hidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+  outline: 0
+  -webkit-appearance: none
+  -moz-appearance: none
+
+.mat-button-base
+  border-radius: 3px
+  border-style: solid
+  border-width: 1px
+  -webkit-font-smoothing: initial
+  -moz-osx-font-smoothing: auto
+  font-family: Avenir Next W02,Helvetica,Arial,sans-serif
+  font-weight: 400
+  text-align: center
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  transition: all .15s ease-out
+  display: inline-block
+  overflow: hidden
+  text-overflow: ellipsis
+  vertical-align: middle
+  white-space: nowrap
+
+  &.mat-primary
+    background-color: #425b76
+    border-color: #425b76
+    color: #fff
+
+    &:hover
+      background-color: #516f90
+      border-color: #516f90
+      color: #fff
+
+  &.mat-warn
+    background-color: #ff7a59
+    border-color: #ff7a59
+    color: #fff
+
+    &:hover
+      background-color: #ff8f73
+      border-color: #ff8f73
+      color: #fff
+
+  &.mat-button-disabled
+    background-color: #eaf0f6!important
+    border-color: #eaf0f6!important
+    color: #b0c1d4!important
+    cursor: not-allowed
+
+.error-msg
+  color: #f2545b!important
+
+hr
+  border: 1px solid #eee
+  width: 100%
+  margin: 20px 0 35px
+
+.text-center
+  text-align: center
+
+.m-top-4
+  margin-top: 16px!important
+
+.m-top-6
+  margin-top: 24px!important
+
+.m-top-8
+  margin-top: 32px!important
+
+.m-bottom-4
+  margin-bottom: 16px!important
+
+.m-bottom-6
+  margin-bottom: 24px!important
+
+.m-bottom-8
+  margin-bottom: 32px!important
+
+.m-right-4
+  margin-right: 16px!important
+
+.google-sign-in
+  background: #5886d4
+  border-radius: .1875rem
+  border: none
+  clear: both
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  height: 40px
+  text-align: center
+  padding: 0
+  position: relative
+  white-space: nowrap
+  width: 100%
+  font-weight: 500
+
+  &:hover
+    background: #4776c4
+    color: #fff
+
+  .icon
+    -moz-border-radius-topleft: .09375rem
+    -webkit-border-top-left-radius: .09375rem
+    border-top-left-radius: .09375rem
+    -moz-border-radius-bottomleft: .09375rem
+    -webkit-border-bottom-left-radius: .09375rem
+    border-bottom-left-radius: .09375rem
+    background-color: #fff
+    background-image: url(//static.hsappstatic.net/LoginUI/static-1.5617/img/google-logo.png)
+    background-position: 50%
+    background-repeat: no-repeat
+    background-size: 24px
+    height: 38px
+    left: 1px
+    position: absolute
+    top: 1px
+    vertical-align: middle
+    width: 38px
+
+  .buttonText
+    display: inline-block
+    font-family: Roboto,sans-serif
+    margin-top: 9px
+    vertical-align: middle
+
+mat-table, table
+  border-spacing: 0
+  mat-header-row, thead
+    font-size: 1em
+    font-weight: 500
+    text-align: left
+    color: rgb(255, 255, 255)
+    background-color: rgb(66, 91, 118)
+    th
+      padding: 3px 6px
+      text-align: center
+  mat-row, tr
+    border-bottom: 1px solid rgb(66, 91, 118)
+    td
+      padding: 3px 6px
+      border-bottom: 1px solid rgb(66, 91, 118)
+.table-container
+  padding: 30px 0
+  .add-button
+    box-sizing: border-box
+    width: 100%
+    max-height: 0
+    display: flex
+    -webkit-box-pack: center
+    justify-content: center
+    -webkit-box-align: center
+    align-items: center
+    overflow: hidden
+    background-color: rgb(253, 143, 95)
+    transition: max-height 0.3s ease 0s
+    cursor: pointer
+  &:hover .add-button
+    max-height: 3em
